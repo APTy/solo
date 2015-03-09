@@ -5,6 +5,6 @@ app.controller('MainController', function($scope, $http) {
 
   $http.post('http://localhost:3000/api', data)
     .success(function(data) {
-      console.log(data);
+      document.getElementById('content').innerHTML = data.content;
     });
 });
