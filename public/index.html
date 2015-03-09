@@ -1,11 +1,16 @@
 <!doctype=html>
 <html>
 <head>
-  <style rel="stylesheet" type="text/css" href="css/bootstrap.min.css"></style>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
   <script src="stout.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"></link>
 </head>
-<body ng-app="stout" ng-controller="MainController">
-<p id="content"></p>
+<body class="container" ng-app="stout" ng-controller="MainController">
+  <div class="row">
+    <h2 id="title"></h2>
+    <h4 id="author"></h4>
+    <div id="content" class="lead" ng-click="play($event)" ng-touch="play()"></div>
+  </div>
 </body>
 </html>
