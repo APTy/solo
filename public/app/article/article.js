@@ -6,9 +6,14 @@ angular.module('stout.article', ['ngSanitize'])
   $scope.play = function($event) {
     $p = $event.target;
 
-    var text = $p.innerText;
-    $p.className = 'playing';
-    Queue.add(text);
+    if ($p.className === 'playing') {
+      $p.className = ''
+      Queue.stop();
+    } else {
+      var text = $p.innerText;
+      $p.className = 'playing';
+      Queue.add(text);
+    }
   };
 
   $scope.playAll = function() {

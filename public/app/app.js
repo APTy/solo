@@ -27,8 +27,16 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
     .state('article', {
       url: '/article',
-      templateUrl: 'app/article/article.html',
-      controller: 'ArticleController'
+      views: {
+        '' : {
+          templateUrl: 'app/article/article.html',
+          controller: 'ArticleController'
+        },
+        'nav@article': {
+          templateUrl: 'app/menu/nav.html',
+          controller: 'MenuController'
+        }
+      }
     });
 
 
