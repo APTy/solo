@@ -5,6 +5,7 @@ var bodyParser = require('body-parser');
 var api = require('./api/api.js');
 
 var app = express();
+app.set('port', (process.env.PORT || 5000));
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/public'));
 
@@ -20,6 +21,6 @@ app.get('/news', function (req, res) {
   });
 });
 
-var server = app.listen(3000, function () {
-  console.log('Example app listening at port 3000');
+var server = app.listen(app.get('port'), function () {
+  console.log('Example app listening at port' + app.get('port'));
 });
