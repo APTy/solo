@@ -26,7 +26,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
     })
 
     .state('article', {
-      url: '/article',
+      url: '/article?url',
       views: {
         '' : {
           templateUrl: 'app/article/article.html',

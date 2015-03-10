@@ -9,7 +9,7 @@ angular.module('stout.services', [])
     $http.post('http://localhost:3000/api', requestData)
       .success(function(responseData) {
         page = responseData;
-        $location.path('/article');
+        $location.path('/article');//?url=' + url);
       });
 
   };
