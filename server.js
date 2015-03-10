@@ -4,9 +4,6 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var api = require('./api/api.js');
 
-var request = require('request');
-var config = require('./env/config.js');
-
 var app = express();
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/public'));

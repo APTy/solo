@@ -1,6 +1,6 @@
 angular.module('stout.menu', [])
 
-.controller('MenuController', function ($scope, Menu) {
+.controller('MenuController', function ($scope, $http, Menu) {
   $scope.news = [
     {title: 'Dow sharply lower amid rate-hike fears',
     teaser: 'NEW YORK (MarketWatch) — U.S. stocks fell sharply on Tuesday with main indexes declining more than 1%.'
@@ -29,4 +29,10 @@ angular.module('stout.menu', [])
       Menu.getPage($scope.request);
     }
   };
+
+  $http.get('http://localhost:3000/news')
+    .success(function(responseData) {
+      news = responseData;
+    });
+
 });
