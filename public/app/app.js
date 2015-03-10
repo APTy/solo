@@ -1,6 +1,7 @@
 var app = angular.module('app', [
   'ui.router',
   'stout.menu',
+  'stout.article',
   'stout.services'
   ]);
 

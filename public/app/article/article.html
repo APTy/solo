@@ -1,5 +1,7 @@
-<!-- <div class="row">
-  <h2 id="title" ng-click="playAll()"></h2>
-  <h4 id="author"></h4>
-  <div id="content" class="lead" ng-click="play($event)" ng-touch="play()"></div>
-</div> -->
+<div ng-model="page">
+  <h2 id="title" ng-click="playAll()">{{ page.title }}</h2>
+  <h4 id="author">{{ page.author }}</h4>
+  <div id="content" class="lead" ng-click="play($event)" ng-touch="play()">
+    {{ page.content }}
+  </div>
+</div>
