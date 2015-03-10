@@ -1,7 +1,7 @@
 // api.js
 
 var request = require('request');
-var config = require('./env/config.js');
+var config = require('../env/config.js');
 
 exports.getReadability = function(url, cb) {
   var api = 'https://readability.com/api/content/v1/parser';
