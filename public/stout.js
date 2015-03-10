@@ -14,10 +14,7 @@ var play = (function() {
   }
 
   var play = function() {
-    var text = queue[0];
-
-    var msg = new SpeechSynthesisUtterance(text);
-    window.speechSynthesis.speak(msg);
+    responsiveVoice.speak(queue[0]);
   }
 
   return {
