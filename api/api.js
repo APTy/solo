@@ -19,7 +19,8 @@ exports.getReadability = function(url, cb) {
 };
 
 exports.getNews = function(cb) {
-  var uri = 'http://api.usatoday.com/open/articles/topnews/home?count=10&days=0&page=0&encoding=json&api_key=ch5b5vgs4h3wr4a93e3jasf7';
+  var token = config.usaToken;
+  var uri = 'http://api.usatoday.com/open/articles/topnews/home?count=10&days=0&page=0&encoding=json&api_key=' + token;
   request({
       uri: uri,
       method: "GET",
