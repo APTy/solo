@@ -34,7 +34,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
         },
         'nav@article': {
           templateUrl: 'app/menu/nav.html',
-          controller: 'MenuController'
+          controller: 'ArticleController'
         }
       }
     });

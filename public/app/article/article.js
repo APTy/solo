@@ -17,6 +17,10 @@ angular.module('stout.article', ['ngSanitize'])
     }
   };
 
+  $scope.stop = function() {
+    Queue.stop();
+  }
+
   $scope.playAll = function() {
     // var text = $scope.page.content;
 
@@ -24,6 +28,6 @@ angular.module('stout.article', ['ngSanitize'])
     // console.log(text);
   };
 
-  
+
 
 });
