@@ -24,4 +24,6 @@ angular.module('stout.article', ['ngSanitize'])
     // console.log(text);
   };
 
+  
+
 });
