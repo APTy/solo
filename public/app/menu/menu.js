@@ -9,9 +9,7 @@ angular.module('stout.menu', [])
     }
   };
 
-  $http.get('http://localhost:3000/news')
-    .success(function(responseData) {
-      $scope.news = responseData.stories;
-    });
-
+  Menu.getNews(function(news) {
+    $scope.news = news;
+  });
 });

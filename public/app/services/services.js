@@ -14,13 +14,21 @@ angular.module('stout.services', [])
 
   };
 
-  var displayPage = function(scope) {
+  var displayPage = function() {
     return page;
+  };
+
+  var getNews = function(cb) {
+    $http.get('http://localhost:3000/news')
+      .success(function(responseData) {
+        cb(responseData.stories);
+      });
   };
 
   return {
     getPage: getPage,
-    displayPage: displayPage
+    displayPage: displayPage,
+    getNews: getNews
   };
 })
 
