@@ -11,16 +11,25 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
   $stateProvider
 
-    .state('/', {
+    .state('menu', {
       url: '/',
-      templateUrl: 'app/menu/menu.html',
-      controller: 'MenuController'
+      views: {
+        '' : {
+          templateUrl: 'app/menu/menu.html',
+          controller: 'MenuController'
+        },
+        'list@menu': {
+          templateUrl: 'app/menu/menu-list.html',
+          controller: 'MenuController'
+        }
+      }
     })
 
-    .state('/article', {
+    .state('article', {
       url: '/article',
       templateUrl: 'app/article/article.html',
       controller: 'ArticleController'
     });
+
 
 });

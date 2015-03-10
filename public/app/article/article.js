@@ -9,8 +9,9 @@ angular.module('stout.article', ['ngSanitize'])
   };
 
   $scope.playAll = function() {
-    // var text = '';
-    // console.log($scope);
+    // var text = $scope.page.content;
+    // Queue.add(text);
+    // console.log(text);
   };
 
 });

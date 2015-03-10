@@ -10,7 +10,6 @@ app.use(express.static(__dirname + '/public'));
 
 app.post('/api', function (req, res) {
   getReadability(req.body.url, function(data) {
-    console.log(req.body.url);
     res.send(data);
   });
 });

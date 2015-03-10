@@ -7,6 +7,10 @@
       <label class="control-label" for="focusedInput">Enter URL</label>
       <input ng-model="request" class="form-control" id="focusedInput" type="url" value="" required>
     </div>
-    <a href="#" class="btn btn-default" ng-click="go()">Default</a>
+    <a href="#" class="btn btn-default" ng-click="go()">Go</a>
   </form>
+
+  <div>
+    <div ui-view="list"></div>
+  </div>
 </div>
