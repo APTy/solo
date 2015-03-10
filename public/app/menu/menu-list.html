@@ -1,7 +1,7 @@
 <table class="table table-hover ">
   <h3>What's happening right now?</h3>
   <tbody>
-    <tr ng-repeat="new in news">
+    <tr ng-repeat="new in news" ng-click="goToPage($index)">
       <td>
         <h4>{{ new.title }}</h4>
         <h5 class="text-muted">{{ new.description }}</h5>

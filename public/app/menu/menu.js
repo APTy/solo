@@ -9,6 +9,10 @@ angular.module('stout.menu', [])
     }
   };
 
+  $scope.goToPage = function(i) {
+    console.log($scope.news[i].link);
+  };
+
   Menu.getNews(function(news) {
     $scope.news = news;
   });
