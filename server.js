@@ -22,5 +22,5 @@ app.get('/news', function (req, res) {
 });
 
 var server = app.listen(app.get('port'), function () {
-  console.log('Example app listening at port' + app.get('port'));
+  console.log('Stout listening at port ' + app.get('port'));
 });
