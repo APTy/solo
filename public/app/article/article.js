@@ -1,4 +1,4 @@
-angular.module('stout.article', [])
+angular.module('stout.article', ['ngSanitize'])
 
 .controller('ArticleController', function($scope, Menu) {
   $scope.page = Menu.displayPage();

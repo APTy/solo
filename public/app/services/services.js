@@ -1,25 +1,21 @@
 angular.module('stout.services', [])
 
-.factory('Menu', function($location) {
-  var data = {
-    title: 'Hello',
-    author: 'Tyler Julian',
-    content: 'This is what\'s up'
-  };
+.factory('Menu', function($location, $http) {
+  var page = {};
 
   var getPage = function() {
-    $location.path('/article');
+    var requestData = JSON.stringify({url: 'testing'});
 
-    // $http.post('http://localhost:3000/api', data)
-    //   .success(function(data) {
-    //     document.getElementById('title').innerHTML = data.title;
-    //     document.getElementById('author').innerHTML = data.author;
-    //     document.getElementById('content').innerHTML = data.content;
-    //   });
+    $http.post('http://localhost:3000/api', requestData)
+      .success(function(responseData) {
+        page = responseData;
+        $location.path('/article');
+      });
+
   };
 
   var displayPage = function() {
-    return data;
+    return page;
   };
 
   return {
