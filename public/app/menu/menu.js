@@ -25,6 +25,8 @@ angular.module('stout.menu', [])
   ];
 
   $scope.go = function() {
-    Menu.getPage($scope.request);
+    if ($scope.form.$valid) {
+      Menu.getPage($scope.request);
+    }
   };
 });

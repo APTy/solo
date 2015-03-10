@@ -3,12 +3,12 @@
   <h1>Stout</h1>
   <p>What do you want to hear about today?</p>
 
-  <form>
+  <form name="form">
     <div class="form-group">
       <label class="control-label" for="focusedInput">Enter URL</label>
       <input ng-model="request" class="form-control" id="focusedInput" type="url" value="" required>
     </div>
-    <a href="#" class="btn btn-default" ng-click="go()">Go</a>
+    <button class="btn btn-default" ng-click="go()">Go</button>
   </form>
 
   <div>
