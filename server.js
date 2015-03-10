@@ -31,6 +31,20 @@ var getReadability = function(url, cb) {
     });
 };
 
+var getNews = function() {
+  var uri = 'http://api.usatoday.com/open/articles/topnews/home?count=10&days=0&page=0&encoding=json&api_key=ch5b5vgs4h3wr4a93e3jasf7';
+  request({
+      uri: uri,
+      method: "GET",
+      timeout: 10000
+    }, function(err, res, body) {
+      var data = JSON.parse(body);
+      console.log(data);
+    });
+};
+
+getNews();
+
 var server = app.listen(3000, function () {
   console.log('Example app listening at port 3000');
 });
