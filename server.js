@@ -14,6 +14,12 @@ app.post('/api', function (req, res) {
   });
 });
 
+app.get('/news', function (req, res) {
+  getNews(function(data) {
+    res.send(data);
+  });
+})
+
 
 var getReadability = function(url, cb) {
   var api = 'https://readability.com/api/content/v1/parser';
@@ -31,7 +37,7 @@ var getReadability = function(url, cb) {
     });
 };
 
-var getNews = function() {
+var getNews = function(cb) {
   var uri = 'http://api.usatoday.com/open/articles/topnews/home?count=10&days=0&page=0&encoding=json&api_key=ch5b5vgs4h3wr4a93e3jasf7';
   request({
       uri: uri,
@@ -39,7 +45,7 @@ var getNews = function() {
       timeout: 10000
     }, function(err, res, body) {
       var data = JSON.parse(body);
-      console.log(data);
+      cb(data);
     });
 };
 
