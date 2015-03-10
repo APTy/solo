@@ -36,13 +36,6 @@ angular.module('stout.services', [])
   var queue = [];
 
   var add = function(text) {
-    // if (queue.indexOf(text) === -1) {
-    //   queue.push(text);
-    //
-    //   if (queue.length === 1) {
-    //     play();
-    //   }
-    // }
     responsiveVoice.speak(text);
   };
 
@@ -51,7 +44,6 @@ angular.module('stout.services', [])
   };
 
   var play = function() {
-
     responsiveVoice.speak(queue[0]);
   };
 
