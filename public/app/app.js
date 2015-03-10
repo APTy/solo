@@ -1,4 +1,8 @@
-var app = angular.module('app', ['ui.router']);
+var app = angular.module('app', [
+  'ui.router',
+  'stout.menu',
+  'stout.services'
+  ]);
 
 app.config(function($stateProvider, $urlRouterProvider) {
 
@@ -7,12 +11,15 @@ app.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
 
     .state('/', {
-        url: '/',
-        templateUrl: 'app/menu/menu.html'
+      url: '/',
+      templateUrl: 'app/menu/menu.html',
+      controller: 'MenuController'
     })
 
     .state('/article', {
-
+      url: '/article',
+      templateUrl: 'app/article/article.html',
+      controller: 'ArticleController'
     });
 
 });
