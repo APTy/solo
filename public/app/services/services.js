@@ -6,7 +6,7 @@ angular.module('stout.services', [])
   var getPage = function(url) {
     var requestData = JSON.stringify({url: url});
 
-    $http.post('http://localhost:3000/api', requestData)
+    $http.post('http://localhost/api', requestData)
       .success(function(responseData) {
         page = responseData;
         $location.path('/article');//?url=' + url);
@@ -19,7 +19,7 @@ angular.module('stout.services', [])
   };
 
   var getNews = function(cb) {
-    $http.get('http://localhost:3000/news')
+    $http.get('http://localhost/news')
       .success(function(responseData) {
         cb(responseData.stories);
       });
