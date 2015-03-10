@@ -335,6 +335,7 @@ var ResponsiveVoice = function(){
 
 		}
 
+
 		if (fallbackMode)
 			self.fallback_startPlaying();
 
@@ -360,7 +361,6 @@ var ResponsiveVoice = function(){
 		// console.log(self.fallback_audio);
 
 
-
 		self.fallback_audio.addEventListener('error', function(e){ /*console.log('error'); console.log(e)*/});
 		// self.fallback_audio.addEventListener('progress', function(e){ console.log('progress'); this.play();});
 		self.fallback_audio.addEventListener('loadstart', function(e){ /*console.log('loadstart'); console.log(e)*/});
@@ -375,7 +375,6 @@ var ResponsiveVoice = function(){
 
 			self.fallback_audio.addEventListener('ended', self.fallback_finishedplaying);
 		}
-
 	}
 
 	this.cancel = function() {
@@ -394,8 +393,6 @@ var ResponsiveVoice = function(){
 	}
 
 	this.OnFinishedPlaying = function(event) {
-
-
 	}
 
 	//Set default voice to use when no voice name is supplied to speak()

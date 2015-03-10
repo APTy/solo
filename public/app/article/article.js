@@ -4,12 +4,16 @@ angular.module('stout.article', ['ngSanitize'])
   $scope.page = Menu.displayPage();
 
   $scope.play = function($event) {
-    var text = $event.target.innerText;
+    $p = $event.target;
+
+    var text = $p.innerText;
+    $p.className = 'playing';
     Queue.add(text);
   };
 
   $scope.playAll = function() {
     // var text = $scope.page.content;
+
     // Queue.add(text);
     // console.log(text);
   };

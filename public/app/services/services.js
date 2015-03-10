@@ -28,20 +28,27 @@ angular.module('stout.services', [])
   var queue = [];
 
   var add = function(text) {
-    if (queue.indexOf(text) === -1) {
-      queue.push(text);
+    // if (queue.indexOf(text) === -1) {
+    //   queue.push(text);
+    //
+    //   if (queue.length === 1) {
+    //     play();
+    //   }
+    // }
+    responsiveVoice.speak(text);
+  };
 
-      if (queue.length === 1) {
-        play();
-      }
-    }
-  }
+  var stop = function() {
+    responsiveVoice.cancel();
+  };
 
   var play = function() {
+
     responsiveVoice.speak(queue[0]);
-  }
+  };
 
   return {
-    add: add
+    add: add,
+    stop: stop
   };
 });

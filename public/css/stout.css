@@ -9,3 +9,7 @@
 .table-hover td:hover {
   background-color: #ededed;
 }
+
+.playing {
+  color: #2299ee;
+}
