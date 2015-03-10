@@ -8,7 +8,6 @@ angular.module('stout.services', [])
   };
 
   var getPage = function() {
-    console.log('gettin page');
     $location.path('/article');
 
     // $http.post('http://localhost:3000/api', data)
@@ -20,10 +19,11 @@ angular.module('stout.services', [])
   };
 
   var displayPage = function() {
-
-  }
+    return data;
+  };
 
   return {
-    getPage: getPage
-  }
+    getPage: getPage,
+    displayPage: displayPage
+  };
 });

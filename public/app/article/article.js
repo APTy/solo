@@ -1,11 +1,7 @@
 angular.module('stout.article', [])
 
-.controller('ArticleController', function($scope) {
-  $scope.page = {
-      title: 'Hello',
-      author: 'Tyler Julian',
-      content: 'This is what\'s up'
-    };
+.controller('ArticleController', function($scope, Menu) {
+  $scope.page = Menu.displayPage();
 
   $scope.play = function($event) {
     // var text = $event.target.innerText;

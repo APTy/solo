@@ -1,8 +1,8 @@
 var app = angular.module('app', [
+  'stout.services',
   'ui.router',
   'stout.menu',
-  'stout.article',
-  'stout.services'
+  'stout.article'
   ]);
 
 app.config(function($stateProvider, $urlRouterProvider) {
