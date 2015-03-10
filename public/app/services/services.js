@@ -3,8 +3,8 @@ angular.module('stout.services', [])
 .factory('Menu', function($location, $http) {
   var page = {};
 
-  var getPage = function() {
-    var requestData = JSON.stringify({url: 'testing'});
+  var getPage = function(url) {
+    var requestData = JSON.stringify({url: url});
 
     $http.post('http://localhost:3000/api', requestData)
       .success(function(responseData) {

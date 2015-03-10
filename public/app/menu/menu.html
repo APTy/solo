@@ -5,7 +5,7 @@
   <form>
     <div class="form-group">
       <label class="control-label" for="focusedInput">Enter URL</label>
-      <input class="form-control" id="focusedInput" type="url" value="" required>
+      <input ng-model="request" class="form-control" id="focusedInput" type="url" value="" required>
     </div>
     <a href="#" class="btn btn-default" ng-click="go()">Default</a>
   </form>

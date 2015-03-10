@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 app.use(express.static(__dirname + '/public'));
 
 app.post('/api', function (req, res) {
-  getReadability('', function(data) {
+  getReadability(req.body.url, function(data) {
     console.log(req.body.url);
     res.send(data);
   });
@@ -18,8 +18,7 @@ app.post('/api', function (req, res) {
 
 var getReadability = function(url, cb) {
   var api = 'https://readability.com/api/content/v1/parser';
-  var url = 'http://blog.readability.com/2011/02/step-up-be-heard-readability-ideas';
-  // url = 'http://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange';
+  // var url = 'http://blog.readability.com/2011/02/step-up-be-heard-readability-ideas';
   var token = config.readToken;
   var uri = api + '?url=' + url + '&token=' + token;
 
