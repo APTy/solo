@@ -30,6 +30,11 @@ app.controller('MainController', function($scope, $http) {
     play.add(text);
   };
 
+  $scope.playAll = function() {
+    var text = '';
+    console.log($scope);
+  }
+
   $http.post('http://localhost:3000/api', data)
     .success(function(data) {
       document.getElementById('title').innerHTML = data.title;

@@ -18,6 +18,7 @@ app.post('/api', function (req, res) {
 var getReadability = function(url, cb) {
   var api = 'https://readability.com/api/content/v1/parser';
   var url = 'http://blog.readability.com/2011/02/step-up-be-heard-readability-ideas';
+  url = 'http://finance.yahoo.com/news/apple-investors-marking-time--awaiting-watch-pricing-news-163536835.html';
   var token = config.readToken;
   var uri = api + '?url=' + url + '&token=' + token;
 

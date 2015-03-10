@@ -1,17 +1,16 @@
 <!doctype=html>
-<html>
+<html ng-app="app">
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <script src="http://responsivevoice.org/responsivevoice/responsivevoice.js"></script>
+  <script src="js/responsivevoice.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
-  <script src="stout.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.13/angular-ui-router.min.js"></script>
   <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"></link>
 </head>
-<body class="container" ng-app="stout" ng-controller="MainController">
-  <div class="row">
-    <h2 id="title" ng-click="playAll()"></h2>
-    <h4 id="author"></h4>
-    <div id="content" class="lead" ng-click="play($event)" ng-touch="play()"></div>
-  </div>
+<body class="container">
+  <div class="row" ui-view></div>
+
+  <script src="app/app.js"></script>
+  <script src="app/menu/menu.js"></script>
 </body>
 </html>
