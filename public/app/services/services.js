@@ -14,7 +14,8 @@ angular.module('stout.services', [])
 
   };
 
-  var displayPage = function() {
+  var displayPage = function(scope) {
+    scope.loading = false;
     return page;
   };
 

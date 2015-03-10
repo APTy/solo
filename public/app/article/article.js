@@ -1,7 +1,8 @@
 angular.module('stout.article', ['ngSanitize'])
 
 .controller('ArticleController', function($scope, Menu, Queue) {
-  $scope.page = Menu.displayPage();
+  $scope.page = Menu.displayPage($scope);
+  $scope.loading = true;
 
   $scope.play = function($event) {
     $p = $event.target;
