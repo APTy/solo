@@ -22,4 +22,26 @@ angular.module('stout.services', [])
     getPage: getPage,
     displayPage: displayPage
   };
+})
+
+.factory('Queue', function() {
+  var queue = [];
+
+  var add = function(text) {
+    if (queue.indexOf(text) === -1) {
+      queue.push(text);
+
+      if (queue.length === 1) {
+        play();
+      }
+    }
+  }
+
+  var play = function() {
+    responsiveVoice.speak(queue[0]);
+  }
+
+  return {
+    add: add
+  };
 });

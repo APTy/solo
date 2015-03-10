@@ -1,11 +1,11 @@
 angular.module('stout.article', ['ngSanitize'])
 
-.controller('ArticleController', function($scope, Menu) {
+.controller('ArticleController', function($scope, Menu, Queue) {
   $scope.page = Menu.displayPage();
 
   $scope.play = function($event) {
-    // var text = $event.target.innerText;
-    // play.add(text);
+    var text = $event.target.innerText;
+    Queue.add(text);
   };
 
   $scope.playAll = function() {

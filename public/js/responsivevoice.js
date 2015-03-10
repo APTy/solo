@@ -135,7 +135,7 @@ var ResponsiveVoice = function(){
 					var v = window.speechSynthesis.getVoices();
 
 					if (v.length==0 && (systemvoices==null || systemvoices.length==0)) {
-						console.log('Voice support NOT ready');
+						// console.log('Voice support NOT ready');
 
 						voicesupport_attempts++;
 						if (voicesupport_attempts > VOICESUPPORT_ATTEMPTLIMIT) {
@@ -148,7 +148,7 @@ var ResponsiveVoice = function(){
 
 					}else{
 
-						console.log('Voice support ready');
+						// console.log('Voice support ready');
 
 						clearInterval(gsvinterval);
 
@@ -169,7 +169,7 @@ var ResponsiveVoice = function(){
 	function enableFallbackMode() {
 
 		fallbackMode = true;
-		console.log('Voice not supported. Using fallback mode');
+		// console.log('Voice not supported. Using fallback mode');
 
 		mapRVs();
 
@@ -239,7 +239,7 @@ var ResponsiveVoice = function(){
 				tmptxt = tmptxt.substr(part.length, tmptxt.length-part.length);
 
 				multipartText.push(part);
-				//console.log(part.length + " - " + part);
+				// console.log(part.length + " - " + part);
 
 			}
 
@@ -280,7 +280,7 @@ var ResponsiveVoice = function(){
 			profile.collectionvoice = {};
 
 			if (profile.systemvoice==null) {
-				console.log('ERROR: No voice found for: ' + voicename);
+				// console.log('ERROR: No voice found for: ' + voicename);
 				return;
 			}
 		}
@@ -311,10 +311,10 @@ var ResponsiveVoice = function(){
 				msg.lang = profile.collectionvoice.lang || profile.systemvoice.lang;
 				msg.onend = self.OnFinishedPlaying;
 				msg.onerror = function(e){
-					console.log('Error');
-					console.log(e);
+					// console.log('Error');
+					// console.log(e);
 				};
-				//console.log(msg);
+				// console.log(msg);
 
 				speechSynthesis.speak(msg);
 
@@ -342,11 +342,11 @@ var ResponsiveVoice = function(){
 
 	this.fallback_startPlaying = function() {
 
-		//console.log('start playing');
+		// console.log('start playing');
 
 		self.fallback_part_index = 0;
 
-		//console.log(self.fallback_parts);
+		// console.log(self.fallback_parts);
 
 		self.fallback_finishedplaying();
 
@@ -355,15 +355,15 @@ var ResponsiveVoice = function(){
 	}
 
 	this.fallback_finishedplaying = function(e) {
-		//console.log('chunk ended');
+		// console.log('chunk ended');
 		self.fallback_audio = self.fallback_parts[self.fallback_part_index];
-		//console.log(self.fallback_audio);
+		// console.log(self.fallback_audio);
 
 
 
-		//self.fallback_audio.addEventListener('error', function(e){ console.log('error'); console.log(e)});
-		//self.fallback_audio.addEventListener('progress', function(e){ console.log('progress'); this.play();});
-		//self.fallback_audio.addEventListener('loadstart', function(e){ console.log('loadstart'); console.log(e)});
+		self.fallback_audio.addEventListener('error', function(e){ /*console.log('error'); console.log(e)*/});
+		// self.fallback_audio.addEventListener('progress', function(e){ console.log('progress'); this.play();});
+		self.fallback_audio.addEventListener('loadstart', function(e){ /*console.log('loadstart'); console.log(e)*/});
 		//self.fallback_audio.load();
 		self.fallback_audio.play();
 
@@ -394,7 +394,7 @@ var ResponsiveVoice = function(){
 	}
 
 	this.OnFinishedPlaying = function(event) {
-    
+
 
 	}
 
@@ -429,7 +429,7 @@ var ResponsiveVoice = function(){
 							systemvoice: v,
 							collectionvoice: vcoll
 						};
-						console.log("Mapped " + rv.name + " to " + v.name);
+						// console.log("Mapped " + rv.name + " to " + v.name);
 						break;
 					}
 
@@ -440,7 +440,7 @@ var ResponsiveVoice = function(){
 						systemvoice: {},
 						collectionvoice: vcoll
 					};
-					console.log("Mapped " + rv.name + " to " + vcoll.lang + " fallback voice");
+					// console.log("Mapped " + rv.name + " to " + vcoll.lang + " fallback voice");
 					break;
 
 				}
