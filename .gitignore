@@ -35,5 +35,4 @@ bower_components/
 .flooignore
 
 # Private API keys
-env/config.js
 test.html
