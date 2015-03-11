@@ -36,3 +36,4 @@ bower_components/
 
 # Private API keys
 test.html
+env/config.js
