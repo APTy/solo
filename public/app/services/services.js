@@ -1,8 +1,8 @@
 angular.module('stout.services', [])
 
 .factory('Menu', function($location, $http) {
-  var hostUrl = 'http://stoutt.herokuapp.com';
-  // hostUrl = 'http://localhost:3000';
+  // var hostUrl = 'http://stoutt.herokuapp.com';
+  hostUrl = 'http://localhost:3000';
   var page = {};
 
   var getPage = function(url) {
@@ -11,7 +11,7 @@ angular.module('stout.services', [])
     $http.post(hostUrl + '/api', requestData)
       .success(function(responseData) {
         page = responseData;
-        $location.path('/article');//?url=' + url);
+        $location.path('/article');
       });
 
   };
