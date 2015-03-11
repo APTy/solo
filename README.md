@@ -1,2 +1,3 @@
-#solo
-This is a project I completed as a student at [Hack Reactor](http://hackreactor.com). This project was worked on with a pair.
+# Stout #
+
+Stout is a free web application for converting traditional text media into audio that users can listen to.
